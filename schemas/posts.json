@@ -14,28 +14,20 @@
     "paths": {
         "/posts": {
             "get": {
-                "summary": "Get all form posts",
-                "operationId": "getPosts",
+                "tags": [
+                    "Posts"
+                ],
+                "summary": "Get all posts",
                 "description": "Get all posts",
+                "operationId": "getPosts",
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "OK",
                         "content": {
                             "application/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "id": {
-                                            "type": "integer",
-                                            "description": "The post id",
-                                            "example": 1
-                                        },
-                                        "name": {
-                                            "type": "string",
-                                            "description": "The post title",
-                                            "example": "Form Template 1"
-                                        }
-                                    }
+                                    "$ref": "#/components/schemas/Posts"
                                 }
                             }
                         }
@@ -45,7 +37,26 @@
         }
     },
     "components": {
-        "schemas": {},
+        "schemas": {
+            "Posts": {
+                "type": "array",
+                "items": {
+                    "$ref": "#/components/schemas/Post"
+                }
+            },
+            "Post": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "title": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
         "responses": {}
     }
 }
