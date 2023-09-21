@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Example app for verifying an API implementation conforms to an OpenAPI specification.
 
-Things you may want to cover:
+- OpenAPI v3 schema spec is stored in `schemas/posts.json`
+- Rspec as the test runner
+- rack-test as the request client
+- Committee gem to validate the response with custom assertions
 
-* Ruby version
 
-* System dependencies
+Running the test:
+```
+rspec spec/api_specs/posts_spec.rb
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The actual response does not match the schema so test should fail
