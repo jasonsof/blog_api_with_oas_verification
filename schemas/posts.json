@@ -1,0 +1,51 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.30",
+        "title": "Posts API",
+        "description": "This is the API specifications for all the endpoints that have to do with the Posts service.",
+        "contact": {
+            "name": "Me",
+            "url": "https://www.google.com"
+        }
+    },
+    "tags": [],
+    "servers": [],
+    "paths": {
+        "/posts": {
+            "get": {
+                "summary": "Get all form posts",
+                "operationId": "getPosts",
+                "description": "Get all posts",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "description": "The post id",
+                                            "example": 1
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "The post title",
+                                            "example": "Form Template 1"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {},
+        "responses": {}
+    }
+}
