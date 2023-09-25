@@ -31,6 +31,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0.0'
   gem 'rack-test'
   gem 'committee', '~> 5.0'
+  gem 'openapi_parser'
+  gem 'pry-rails'
 end
 
 group :development do
